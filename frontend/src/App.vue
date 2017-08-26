@@ -1,13 +1,18 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
+    <progress-bar></progress-bar>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+  import ProgressBar from './components/ProgressBar'
   export default {
-    name: 'app'
+    name: 'app',
+    components: {
+      ProgressBar
+    }
   }
 </script>
 

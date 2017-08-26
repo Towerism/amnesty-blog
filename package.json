@@ -1,0 +1,20 @@
+{
+  "name": "amnesty-blog",
+  "version": "1.0.0",
+  "description": "Amnesty International Blog",
+  "main": "index.js",
+  "repository": "git@github.com:towerism/amnesty-blog",
+  "author": "Martin Fracker <martin.frackerjr@gmail.com>",
+  "license": "GNU GPL v3",
+  "dependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.5.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-plugin-html": "^3.2.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1"
+  }
+}
