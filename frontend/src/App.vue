@@ -1,7 +1,12 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
     <progress-bar></progress-bar>
+    <b-navbar toggleable="md" type="dark" variant="dark">
+      <b-navbar-brand to="/">Amnesty</b-navbar-brand>
+      <b-nav is-nav-bar>
+        <b-nav-item to="/">Home</b-nav-item>
+      </b-nav>
+    </b-navbar>
     <router-view></router-view>
   </div>
 </template>
@@ -23,6 +28,5 @@
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    margin-top: 60px;
   }
 </style>

@@ -1,3 +1,3 @@
-var eslintConfig = require('../.eslintrc');
+var eslintConfig = require('../.eslintrc')
 
 module.exports = eslintConfig
