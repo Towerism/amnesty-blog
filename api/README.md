@@ -15,7 +15,7 @@ yarn run dev
 yarn run start
 
 # run all tests
-npm test
+yarn test
 ```
 
 Create `auth.json` in `config` for use in jwt signing during development.
