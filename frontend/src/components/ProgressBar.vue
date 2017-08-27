@@ -1,7 +1,6 @@
-<template>
-  <div id="progress-bar">
-    <vue-progress-bar></vue-progress-bar>
-  </div>
+<template lang="pug">
+  #progress-bar
+    vue-progress-bar
 </template>
 
 <script>

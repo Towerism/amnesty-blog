@@ -1,22 +1,19 @@
-<template>
-  <div id="app">
-    <progress-bar></progress-bar>
-    <b-navbar toggleable="md" type="dark" variant="dark">
-      <b-navbar-brand to="/">Amnesty</b-navbar-brand>
-      <b-nav is-nav-bar>
-        <b-nav-item to="/">Home</b-nav-item>
-      </b-nav>
-    </b-navbar>
-    <router-view></router-view>
-  </div>
+<template lang="pug">
+  #app
+    progress-bar
+    nav-bar
+    .container
+      router-view
 </template>
 
 <script>
   import ProgressBar from './components/ProgressBar'
+  import NavBar from './components/NavBar'
   export default {
     name: 'app',
     components: {
-      ProgressBar
+      ProgressBar,
+      NavBar
     }
   }
 </script>
@@ -26,7 +23,6 @@
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
     color: #2c3e50;
   }
 </style>
