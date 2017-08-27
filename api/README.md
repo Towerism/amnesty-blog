@@ -1,30 +1,32 @@
-# amnesty-blog
+# Amnesty Api
 
-> The front end of the blog for Amnesty International
+> The api for the Amnesty International blog
 
 ## Build Setup
 
 ``` bash
 # install dependencies
-npm install
+yarn install
 
-# serve with hot reload at localhost:8080
-npm run dev
+# serve with auto reload at localhost:3000
+yarn run dev
 
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
+# start without auto reload
+yarn run start
 
 # run all tests
 npm test
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+Create `auth.json` in `config` for use in jwt signing during development.
+It will look something like this:
+``` json
+{
+  "secretOrKey": "HWnOmIr9tY5LUWgqb3sLRdBNW1LuCGZYmOwDwBAFrqoF0TqHz0EJrl6935YVIu9",
+  "claims": {
+    "issuer": "localhost",
+    "audience": "localhost",
+    "expiresIn": "365d"
+  }
+}
+```
