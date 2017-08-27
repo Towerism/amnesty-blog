@@ -6,10 +6,19 @@ export default (sequelize, DataTypes) => {
     password: DataTypes.STRING,
     firstname: DataTypes.STRING,
     lastname: DataTypes.STRING
+  }, {
+    classMethods: {
+      associate: function (models) {
+        // associations can be defined here
+      }
+    },
+    getterMethods: {
+      fullName: function () {
+        return `${this.firstname} ${this.lastname}`
+      }
+    }
   })
-  User.associate = function (models) {
-    // associations can be defined here
-  }
+  // TODO: use instanceMethods field for this
   User.prototype.validatePassword = function (password) {
     return bcrypt.compare(password, this.password).then(result => {
       return result
