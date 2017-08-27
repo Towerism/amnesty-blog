@@ -1,4 +1,5 @@
-# Amnesty Front End
+# amnesty-blog
+
 > The front end of the blog for Amnesty International
 
 ## Build Setup

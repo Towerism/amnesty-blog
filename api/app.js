@@ -1,19 +1,20 @@
 import bodyParser from 'body-parser'
 import cookieParser from 'cookie-parser'
+import session from 'express-session'
 import Debug from 'debug'
 import express from 'express'
 import logger from 'morgan'
 import path from 'path'
-// import favicon from 'serve-favicon'
+
+import auth from './auth'
 
 import index from './routes/index'
 import users from './routes/users'
+import login from './routes/login'
 
 const app = express()
 const debug = Debug('api:app')
 
-// uncomment after placing your favicon in /public
-// app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
@@ -21,9 +22,14 @@ app.use(bodyParser.urlencoded({
 }))
 
 app.use(cookieParser())
+app.unsubscribe(session({ secret: 'keyboard cat', resave: false, saveUninitialized: false }))
 
 app.use(express.static(path.join(__dirname, 'public')))
 
+app.use(auth.initialize())
+app.use(auth.session())
+
+app.use('/login', login)
 app.use('/', index)
 app.use('/users', users)
 

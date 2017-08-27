@@ -6,8 +6,8 @@ const initialUser = {
   password: 'Password2',
   firstname: 'Amnesty',
   lastname: 'International',
-  createdAt: new Date,
-  updatedAt: new Date,
+  createdAt: new Date(),
+  updatedAt: new Date()
 }
 
 const saltRounds = 10

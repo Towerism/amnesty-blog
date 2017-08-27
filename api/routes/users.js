@@ -6,10 +6,10 @@ var router = express.Router()
 
 function mapToUserViewModel(user) {
   return {
-      email: user.email,
-      firstname: user.firstname,
-      lastname: user.lastname
-    }
+    email: user.email,
+    firstname: user.firstname,
+    lastname: user.lastname
+  }
 }
 
 router.get('/', (req, res) => {
