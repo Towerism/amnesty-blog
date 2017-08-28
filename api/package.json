@@ -40,6 +40,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-mocha": "^4.11.0",
     "eslint-plugin-react": "^7.2.1",
+    "mocha": "^3.5.0",
     "nodemon": "^1.11.0",
     "sequelize-cli": "^2.8.0",
     "sqlite3": "^3.1.9"
