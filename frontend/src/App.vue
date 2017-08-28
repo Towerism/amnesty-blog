@@ -2,27 +2,32 @@
   #app
     progress-bar
     nav-bar
-    .container
+    #view.container
       router-view
+    nav-footer
 </template>
 
 <script>
   import ProgressBar from './components/ProgressBar'
   import NavBar from './components/NavBar'
+  import NavFooter from './components/NavFooter'
+
   export default {
     name: 'app',
     components: {
       ProgressBar,
-      NavBar
+      NavBar,
+      NavFooter
     }
   }
 </script>
 
-<style>
-  #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    color: #2c3e50;
-  }
+<style lang="stylus">
+  #app
+    font-family: 'Avenir', Helvetica, Arial, sans-serif
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    color: #2c3e50
+    #view
+      padding-top: 65px
 </style>

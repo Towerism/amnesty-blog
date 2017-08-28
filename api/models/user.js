@@ -13,7 +13,7 @@ export default (sequelize, DataTypes) => {
       }
     },
     getterMethods: {
-      fullName: function () {
+      fullname: function () {
         return `${this.firstname} ${this.lastname}`
       }
     }

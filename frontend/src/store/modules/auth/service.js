@@ -1,50 +1,53 @@
-import router from '@/router'
+import api from '@/api'
+import jwtDecode from 'jwt-decode'
+
+const AUTH_TOKEN = 'authToken'
 
 // URL and endpoint constants
 export default {
-
-  // User object will let us check authentication status
-  user: {
-    authenticated: false
-  },
-
-  // Send a request to the login URL and save the returned JWT
-  login(context, creds, redirect) {
-    context.$http.post(LOGIN_URL, creds, (data) => {
-      localStorage.setItem('id_token', data.id_token)
-      localStorage.setItem('access_token', data.access_token)
-
-      this.user.authenticated = true
-
-      // Redirect to a specified route
-      if (redirect) {
-        router.go(redirect)
-      }
-    }).error((err) => {
-      context.error = err
+  login(creds) {
+    return api.post('/login', creds).then(response => {
+      localStorage.setItem(AUTH_TOKEN, response.data)
+      api.setHeader(this.getAuthHeader())
+      return Promise.resolve()
+    }).catch(error => {
+      return Promise.reject(error)
     })
   },
 
-  // To log out, we just need to remove the token
   logout() {
-    localStorage.removeItem('access_token')
-    this.user.authenticated = false
+    localStorage.removeItem(AUTH_TOKEN)
+    return Promise.resolve()
   },
 
-  checkAuth() {
-    var jwt = localStorage.getItem('id_token')
+  isAuthenticated() {
+    var jwt = getToken()
     if (jwt) {
-      this.user.authenticated = true
+      api.setHeader(this.getAuthHeader())
     }
-    else {
-      this.user.authenticated = false
+    return !!jwt // TODO: verify exp claim
+  },
+
+  getUserInfo() {
+    if (!this.isAuthenticated()) {
+      return null
+    }
+    var decodedToken = jwtDecode(getToken())
+    return {
+      id: decodedToken.sub,
+      email: decodedToken.email,
+      fullname: decodedToken.fullname
     }
   },
 
   // The object to be passed as a header for authenticated requests
   getAuthHeader() {
     return {
-      'Authorization': 'Bearer ' + localStorage.getItem('access_token')
+      'Authorization': 'bearer ' + getToken()
     }
   }
+}
+
+function getToken() {
+  return localStorage.getItem(AUTH_TOKEN)
 }

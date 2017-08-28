@@ -5,6 +5,7 @@ import Debug from 'debug'
 import express from 'express'
 import logger from 'morgan'
 import path from 'path'
+import cors from 'cors'
 
 import auth from './auth'
 
@@ -28,6 +29,8 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.use(auth.initialize())
 app.use(auth.session())
+
+app.use(cors())
 
 app.use('/login', login)
 app.use('/', index)

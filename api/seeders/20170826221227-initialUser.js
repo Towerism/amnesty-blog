@@ -4,8 +4,8 @@ const initialUser = {
   id: 1,
   email: 'admin@amnesty',
   password: 'Password2',
-  firstname: 'Amnesty',
-  lastname: 'International',
+  firstname: 'Patty',
+  lastname: 'Najera',
   createdAt: new Date(),
   updatedAt: new Date()
 }

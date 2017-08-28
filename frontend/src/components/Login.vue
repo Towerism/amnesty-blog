@@ -9,27 +9,36 @@
         #body
           b-form(@submit.prevent="onSubmit")
             b-form-group(label="Email" label-for="email")
-              b-form-input#email(type="email" required placeholder="Enter email" v-model="email")
+              b-form-input#email(type="email" required placeholder="Enter email" v-model="credentials.email")
             b-form-group(label="Password" label-for="password")
-              b-form-input#password(label="Password" required placeholder="Enter Password" v-model="password")
+              b-form-input#password(type="password" required placeholder="Enter Password" v-model="credentials.password")
             b-form-group
               b-form-checkbox(v-model="rememberMe") Remember me
             b-button(type="submit") Submit
 </template>
 
 <script>
+  import router from '@/router'
+
   export default {
     name: 'login',
     data() {
       return {
+        loginError: false,
         rememberMe: false,
-        email: undefined,
-        password: undefined
+        credentials: {
+          email: '',
+          password: ''
+        }
       }
     },
     methods: {
       onSubmit() {
-
+        this.$store.dispatch('auth/login', this.credentials).then(() => {
+          router.push('/home')
+        }).catch(() => {
+          this.loginError = true
+        })
       }
     }
   }
