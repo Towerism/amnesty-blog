@@ -2,6 +2,7 @@ import models from '../models'
 import express from 'express'
 import { authenticated } from '../auth'
 import _ from 'lodash'
+import bcrypt from 'bcrypt'
 
 var router = express.Router()
 
@@ -26,10 +27,12 @@ router.get('/:user_id', authenticated(), (req, res) => {
 })
 
 router.post('/create', authenticated(), function (req, res) {
-  models.User.create({
-    email: req.body.email
-  }).then(function () {
-    res.redirect('/')
+  bcrypt.hash('Password2', 10).then(password => {
+    var user = req.body
+    user.password = password
+    models.User.create(user).then(function () {
+      res.redirect('/')
+    })
   })
 })
 
