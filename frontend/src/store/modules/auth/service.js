@@ -8,7 +8,7 @@ export default {
   login(creds) {
     return api.post('/login', creds).then(response => {
       localStorage.setItem(AUTH_TOKEN, response.data)
-      api.setHeader(this.getAuthHeader())
+      api.setAuthHeader(this.getAuthHeader())
       return Promise.resolve()
     }).catch(error => {
       return Promise.reject(error)
@@ -23,7 +23,7 @@ export default {
   isAuthenticated() {
     var jwt = getToken()
     if (jwt) {
-      api.setHeader(this.getAuthHeader())
+      api.setAuthHeader(this.getAuthHeader())
     }
     return !!jwt // TODO: verify exp claim
   },
@@ -42,9 +42,7 @@ export default {
 
   // The object to be passed as a header for authenticated requests
   getAuthHeader() {
-    return {
-      'Authorization': 'bearer ' + getToken()
-    }
+    return `bearer ${getToken()}`
   }
 }
 

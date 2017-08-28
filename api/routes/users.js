@@ -31,7 +31,7 @@ router.post('/create', authenticated(), function (req, res) {
     var user = req.body
     user.password = password
     models.User.create(user).then(function () {
-      res.redirect('/')
+      res.send(mapToUserViewModel(user))
     })
   })
 })

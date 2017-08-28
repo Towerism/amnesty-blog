@@ -1,8 +1,8 @@
 import http from './http'
 
 export default {
-  setHeader(header) {
-    http.defaults.headers = { header }
+  setAuthHeader(authHeader) {
+    http.defaults.headers.common['Authorization'] = authHeader
   },
 
   post(path, data = {}) {
