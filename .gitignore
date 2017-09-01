@@ -17,3 +17,6 @@ selenium-debug.log
 
 # Api
 *.sqlite
+
+# Frontend
+/frontend/test/unit/coverage
