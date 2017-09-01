@@ -1,6 +1,14 @@
 language: node_js
+
 node_js:
   - "8"
+
+env:
+  - SERVICE=frontend
+  - SERVICE=api
+
 cache: yarn
+
 install: ci/install.sh
+
 script: ci/script.sh

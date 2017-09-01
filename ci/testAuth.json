@@ -1,0 +1,11 @@
+/*
+THIS IS A TEST auth.json IT SHOULD NOT BE USED IN PRODUCTION
+*/
+{
+  "secretOrKey": "<Your Secret Key For Signing JWT Here>",
+  "claims": {
+    "issuer": "localhost",
+    "audience": "localhost",
+    "expiresIn": "365d"
+  }
+}
