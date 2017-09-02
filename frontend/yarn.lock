@@ -1079,6 +1079,15 @@ browserslist@^2.1.2, browserslist@^2.1.5:
     caniuse-lite "^1.0.30000715"
     electron-to-chromium "^1.3.18"
 
+browserstack-local@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/browserstack-local/-/browserstack-local-1.3.0.tgz#fe80ef05ce8954c4d626e3502eb62d60903b4237"
+  dependencies:
+    https-proxy-agent "^1.0.0"
+    is-running "^2.0.0"
+    sinon "^1.17.6"
+    temp-fs "^0.9.9"
+
 buffer-xor@^1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/buffer-xor/-/buffer-xor-1.0.3.tgz#26e61ed1422fb70dd42e6e36729ed51d855fe8d9"
@@ -2519,6 +2528,12 @@ form-data@~2.1.1:
     combined-stream "^1.0.5"
     mime-types "^2.1.12"
 
+formatio@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/formatio/-/formatio-1.1.1.tgz#5ed3ccd636551097383465d996199100e86161e9"
+  dependencies:
+    samsam "~1.1"
+
 formatio@1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/formatio/-/formatio-1.2.0.tgz#f3b2167d9068c4698a8d51f4f760a39a54d818eb"
@@ -2964,7 +2979,7 @@ https-browserify@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/https-browserify/-/https-browserify-0.0.1.tgz#3f91365cabe60b77ed0ebba24b454e3e09d95a82"
 
-https-proxy-agent@1:
+https-proxy-agent@1, https-proxy-agent@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/https-proxy-agent/-/https-proxy-agent-1.0.0.tgz#35f7da6c48ce4ddbfa264891ac593ee5ff8671e6"
   dependencies:
@@ -3245,6 +3260,10 @@ is-resolvable@^1.0.0:
   resolved "https://registry.yarnpkg.com/is-resolvable/-/is-resolvable-1.0.0.tgz#8df57c61ea2e3c501408d100fb013cf8d6e0cc62"
   dependencies:
     tryit "^1.0.1"
+
+is-running@^2.0.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/is-running/-/is-running-2.1.0.tgz#30a73ff5cc3854e4fc25490809e9f5abf8de09e0"
 
 is-stream@^1.0.1:
   version "1.1.0"
@@ -3772,6 +3791,10 @@ log4js@^0.6.31:
   dependencies:
     readable-stream "~1.0.2"
     semver "~4.3.3"
+
+lolex@1.3.2:
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/lolex/-/lolex-1.3.2.tgz#7c3da62ffcb30f0f5a80a2566ca24e45d8a01f31"
 
 lolex@^1.5.2, lolex@^1.6.0:
   version "1.6.0"
@@ -5291,6 +5314,12 @@ rimraf@2, rimraf@^2.2.8, rimraf@^2.5.1, rimraf@^2.5.4, rimraf@^2.6.0, rimraf@^2.
   dependencies:
     glob "^7.0.5"
 
+rimraf@~2.5.2:
+  version "2.5.4"
+  resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.5.4.tgz#96800093cbf1a0c86bd95b4625467535c29dfa04"
+  dependencies:
+    glob "^7.0.5"
+
 ripemd160@^2.0.0, ripemd160@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/ripemd160/-/ripemd160-2.0.1.tgz#0f4584295c53a3628af7e6d79aca21ce57d1c6e7"
@@ -5315,6 +5344,10 @@ safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.1, safe-buffer@~5.1.0, 
 safe-buffer@~5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.0.1.tgz#d263ca54696cd8a306b5ca6551e92de57918fbe7"
+
+samsam@1.1.2, samsam@~1.1:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/samsam/-/samsam-1.1.2.tgz#bec11fdc83a9fda063401210e40176c3024d1567"
 
 samsam@1.x, samsam@^1.1.3:
   version "1.2.1"
@@ -5428,6 +5461,15 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
 sinon-chai@^2.8.0:
   version "2.13.0"
   resolved "https://registry.yarnpkg.com/sinon-chai/-/sinon-chai-2.13.0.tgz#b9a42e801c20234bfc2f43b29e6f4f61b60990c4"
+
+sinon@^1.17.6:
+  version "1.17.7"
+  resolved "https://registry.yarnpkg.com/sinon/-/sinon-1.17.7.tgz#4542a4f49ba0c45c05eb2e9dd9d203e2b8efe0bf"
+  dependencies:
+    formatio "1.1.1"
+    lolex "1.3.2"
+    samsam "1.1.2"
+    util ">=0.10.3 <1"
 
 sinon@^2.1.0:
   version "2.4.1"
@@ -5785,6 +5827,12 @@ tar@^2.2.1:
     fstream "^1.0.2"
     inherits "2"
 
+temp-fs@^0.9.9:
+  version "0.9.9"
+  resolved "https://registry.yarnpkg.com/temp-fs/-/temp-fs-0.9.9.tgz#8071730437870720e9431532fe2814364f8803d7"
+  dependencies:
+    rimraf "~2.5.2"
+
 test-exclude@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/test-exclude/-/test-exclude-4.1.1.tgz#4d84964b0966b0087ecc334a2ce002d3d9341e26"
@@ -6005,7 +6053,7 @@ util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
 
-util@0.10.3, util@^0.10.3:
+util@0.10.3, "util@>=0.10.3 <1", util@^0.10.3:
   version "0.10.3"
   resolved "https://registry.yarnpkg.com/util/-/util-0.10.3.tgz#7afb1afe50805246489e3db7fe0ed379336ac0f9"
   dependencies:

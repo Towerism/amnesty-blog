@@ -38,6 +38,7 @@ if (process.env.REMOTE_E2E) {
     desiredCapabilities: {
       'browserstack.user': process.env.BROWSERSTACK_USER,
       'browserstack.key': process.env.BROWSERSTACK_ACCESS_KEY,
+      'browserstack.local': true,
       'browser': 'chrome'
     }
   })
