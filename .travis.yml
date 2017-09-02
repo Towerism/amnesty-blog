@@ -6,6 +6,10 @@ env:
   - SERVICE=frontend
   - SERVICE=api
   - SERVICE=integration
+branches:
+  only:
+    - develop
+    - master
 cache: yarn
 install: ci/install.sh
 script: ci/script.sh
