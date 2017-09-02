@@ -1,14 +1,21 @@
 language: node_js
-
 node_js:
-  - "8"
-
+- '8'
 env:
+  matrix:
   - SERVICE=frontend
   - SERVICE=api
-
+  - SERVICE=integration
+  global:
+  - secure: lM+OvC2VSS4GDhKBvVw68APerHMi8esNwLYV/noiK19Yij6KZwgAqz+nEMjvxTemQpjQ1Lx2y9G6uWPAQbQ8BM+e73MX1bsn8MW7Dw5og9m+6GUDXmoz8cdQaMz96dM/27nbwBasuj2tlxXSMXk58eq1J3Uex+0nXz7MOit76Ahf877w1Hz6Ye3Ig33mZ9VR19fPURuoJM/dx0sv+lsu/6OpVoJ7MwOPtAZtynr7q655gdYh865q/7bxPbCPI5YfhRd+QC7KJX6qxN84MzkRl45egf2OSgyrmAd8Rycnfq9tMOY6r1uZiL2tk1L4K7Ewb3BziO4rOfUmFwVCWskjqo5sOG+rr94wSIAjIGsUHqOIz0DlxWNlFQHOG9RzvAnP5xbfyKOlDauzgMzfqUYmzx9Vm6JxAomv3ZJ2LzMR813f0L2BIgQzMKfda6vP/TWyYVF5CIzs3+AiUdV2DBaVipg1FVOhnwGuno/zIgSj+v3U54qCVB22fwSPCRHlgIDuBfQ/MVMi3ZK3AD//FsvlXWBY+F8bMZid72p7YQ1anTcS6zrbLonbmROvdxalCpHVtI67kmaKKRf79vfY2HCaQtR6UW8GSDqNcHj+PXvm+HmO8CZewaVCJRC154lnPO51S9c4TJDuqoymcoB7aTSVyRYrd7QB0lzGfVcSINrqHL4=
+  - secure: PIAWN3ZRuDa4QBaCaj428FbpWlIlGGQyLQpOKy7JH8PXu7Ot8TrDHDyfPZKVI1hUAfnzmDfMjvs92Nqsx4EIcbtvMeaXwXlpTou6tclBBZKVk/wuRgZ6ZyxvLJgAOkyEGkvJ2u4unel1Dgg+o8yPCXMPYz0x5n5K1w6/N4FK8oGCAe3/XpauMbtv9uOWeYpQsMY9q6xRCJOvwdtlFDmUY/7y0/7gWCU6jEu4I085SrQWsS+E8eFw0Iy+JbnszEk76FeldG2QPLOoMNw8YS+3X6zdbPKP+jyII4j/3jD6J80B0fkCA0dLv2to+5VNfm7DOL2PbmmX30nmrlQ/zlffyQboHUrHtUbp9IOIQ3j9GMhE5MnNDKr+F7M0GMqeFSAjZy/nAKdHdqe1cOPBPr5Xb/C2uxfzanZ4nBCoNMxfyPVKJyblwCQbuCfyOfvXd74+GQVO+S971SmpynL/TjmEYwDM2vKxwQX/Hzx2haD1DyrEPN0dqYk8NeeM4le5cr+CrN5jRfk6QrX20fpt2HTnG7nL56w4J1rlQcIWx1tI3mtrZpT5asMaknHfw1VVUJZDizz9jgRFhXsThI3zZG3BO7lGJEdhnUBmy2xQ5Mv+f5XH5LZ19/GMUmOdKviC2kgCfVfnV4SgWZN25ZC7X5Vm7u2SCdWFrJEnnHlA5UKOWo4=
 cache: yarn
-
 install: ci/install.sh
-
 script: ci/script.sh
+addons:
+  browserstack:
+    username: $BROWSER_STACK_USERNAME
+    access_key:
+      secure: $BROWSER_STACK_PASSWORD
+    force_local: true
+    only: localhost,8080,0
