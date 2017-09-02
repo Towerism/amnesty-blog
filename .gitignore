@@ -20,3 +20,4 @@ selenium-debug.log
 
 # Frontend
 /frontend/test/unit/coverage
+/frontend/test/e2e/reports
