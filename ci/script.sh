@@ -13,7 +13,7 @@ elif [ "${SERVICE}" == "integration" ]; then
   )
   (
     cd frontend
-    yarn e2e:remote
+    yarn e2e
   )
 else
   echo "${SERVICE} not recognized as a service type"
