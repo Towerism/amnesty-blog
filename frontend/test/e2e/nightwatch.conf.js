@@ -42,8 +42,8 @@ module.exports = {
 
     chromeRemote: {
       desiredCapabilities: {
-        'browserstack.user': process.env.BROWSERSTACK_USERNAME,
-        'browserstack.key': process.env.BROWSERSTACK_PASSWORD,
+        'browserstack.user': process.env.BROWSERSTACK_USER,
+        'browserstack.key': process.env.BROWSERSTACK_ACCESS_KEY,
         'browser': 'chrome'
       }
     },
