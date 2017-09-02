@@ -10,3 +10,4 @@ if [ "${SERVICE}" != "INTEGRATION" ]; then
 else
   (cd api && yarn)
   (cd frontend && yarn)
+fi
