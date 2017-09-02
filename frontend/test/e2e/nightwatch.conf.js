@@ -41,6 +41,11 @@ if (process.env.REMOTE_E2E) {
       'browser': 'chrome'
     }
   })
+  for (var key in testSettings) {
+    var settings = testSettings[key]
+    settings['selenium_host'] = selenium.host
+    settings['selenium_port'] = selenium.port
+  }
 } else {
   console.log('REGULAR')
   selenium = {
